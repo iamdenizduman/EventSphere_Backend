@@ -1,4 +1,4 @@
-﻿namespace EventSphere.Identity.Application.Security.Interfaces
+﻿namespace EventSphere.Identity.Application.Common.Interfaces.Security
 {
     public interface IPasswordHasher
     {

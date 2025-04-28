@@ -1,6 +1,6 @@
 ﻿using EventSphere.Core.Enums;
 using EventSphere.Core.Result;
-using EventSphere.Identity.Application.Security.Interfaces;
+using EventSphere.Identity.Application.Common.Interfaces.Security;
 using EventSphere.Identity.Domain.Repositories;
 using MediatR;
 
