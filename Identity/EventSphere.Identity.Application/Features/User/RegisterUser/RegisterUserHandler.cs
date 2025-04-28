@@ -16,7 +16,7 @@ namespace EventSphere.Identity.Application.Features.User.RegisterUser
         {
             var existMail = await _userReadRepository.GetSingleAsync(u => u.Email == request.Email);
 
-            if (existMail == null)
+            if (existMail != null)
                 return new DataResult<RegisterUserResponse>(null, ResultStatus.Error, "Mail sistemde kayıtlı");
                 
             _passwordHasher.CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
@@ -27,7 +27,7 @@ namespace EventSphere.Identity.Application.Features.User.RegisterUser
                 Email = request.Email,
                 PasswordSalt = passwordSalt,
                 PasswordHash = passwordHash,
-                CreatedDate = DateTime.Now                
+                CreatedDate = DateTime.UtcNow                
             };
 
             await _userWriteRepository.AddAsync(user);            
@@ -39,14 +39,13 @@ namespace EventSphere.Identity.Application.Features.User.RegisterUser
                 {
                     Email = request.Email,
                     FirstName = request.FirstName,
-                    LastName= request.LastName,
-                    Password = request.Password
+                    LastName= request.LastName
                 };
 
                 return new DataResult<RegisterUserResponse>(response, ResultStatus.Success, "Başarıyla kaydedildi");
             }
 
-            return new DataResult<RegisterUserResponse>(null, ResultStatus.Success, "Kaydedilirken sorun yaşandı");
+            return new DataResult<RegisterUserResponse>(null, ResultStatus.Error, "Kaydedilirken sorun yaşandı");
         }
     }
 }
