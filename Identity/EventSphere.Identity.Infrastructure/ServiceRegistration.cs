@@ -8,7 +8,7 @@ namespace EventSphere.Identity.Infrastructure
 {
     public static class ServiceRegistration
     {
-        public static void AddPersistenceServices(this IServiceCollection services)
+        public static void AddInfrastructureServices(this IServiceCollection services)
         {
             services.AddScoped<ITokenHelper, TokenHelper>();
             services.AddScoped<IHashingHelper, HashingHelper>();

@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.Identity.Persis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.Identity.Infrastructure", "Identity\EventSphere.Identity.Infrastructure\EventSphere.Identity.Infrastructure.csproj", "{0A33C6A6-BD6C-4495-AC5F-624BA554DC12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.Identity.WebUI", "Identity\EventSphere.Identity.WebUI\EventSphere.Identity.WebUI.csproj", "{057CC6AD-78B5-4BCE-BC98-B671FCA001E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{0A33C6A6-BD6C-4495-AC5F-624BA554DC12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A33C6A6-BD6C-4495-AC5F-624BA554DC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A33C6A6-BD6C-4495-AC5F-624BA554DC12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{057CC6AD-78B5-4BCE-BC98-B671FCA001E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{057CC6AD-78B5-4BCE-BC98-B671FCA001E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{057CC6AD-78B5-4BCE-BC98-B671FCA001E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{057CC6AD-78B5-4BCE-BC98-B671FCA001E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{258FCAF2-7483-4C62-81A9-BA677861BF5F} = {BD980CE3-14EF-491E-B128-657D546BB8E7}
 		{2C182EE0-07D1-4009-B421-B5230B620747} = {BD980CE3-14EF-491E-B128-657D546BB8E7}
 		{0A33C6A6-BD6C-4495-AC5F-624BA554DC12} = {BD980CE3-14EF-491E-B128-657D546BB8E7}
+		{057CC6AD-78B5-4BCE-BC98-B671FCA001E5} = {BD980CE3-14EF-491E-B128-657D546BB8E7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D780CA7-207C-472E-BAB0-CA7D6116899F}
