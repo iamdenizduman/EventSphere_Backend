@@ -1,4 +1,6 @@
-﻿using EventSphere.Identity.Domain.Repositories;
+﻿using EventSphere.Core.Repository.Abstract.EntityFramework;
+using EventSphere.Core.Repository.Interfaces;
+using EventSphere.Identity.Domain.Repositories;
 using EventSphere.Identity.Persistence.Repositories.EntityFramework;
 using EventSphere.Identity.Persistence.Repositories.EntityFramework.Context;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +23,7 @@ namespace EventSphere.Identity.Persistence
             services.AddScoped<IUserOperationClaimWriteRepository, EfUserOperationClaimWriteRepository>();
             services.AddScoped<IOperationClaimReadRepository, EfOperationClaimReadRepository>();
             services.AddScoped<IOperationClaimWriteRepository, EfOperationClaimWriteRepository>();
+            services.AddScoped<IUnitOfWork, EfUnitOfWork<IdentityDbContext>>();
         }
     }
 }
