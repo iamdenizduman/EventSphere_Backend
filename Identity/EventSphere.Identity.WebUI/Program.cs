@@ -1,8 +1,11 @@
 using EventSphere.Identity.Persistence;
 using EventSphere.Identity.Infrastructure;
 using EventSphere.Identity.Application;
+using EventSphere.Identity.Application.Models.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<TokenOptions>(builder.Configuration.GetSection("TokenOptions"));
 
 builder.Services.AddPersistenceServices();
 builder.Services.AddInfrastructureServices();
@@ -14,7 +17,6 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

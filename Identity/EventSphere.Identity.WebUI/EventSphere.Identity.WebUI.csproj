@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\EventSphere.Identity.Infrastructure\EventSphere.Identity.Infrastructure.csproj" />
     <ProjectReference Include="..\EventSphere.Identity.Persistence\EventSphere.Identity.Persistence.csproj" />
   </ItemGroup>

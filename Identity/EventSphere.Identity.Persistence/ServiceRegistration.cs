@@ -12,7 +12,7 @@ namespace EventSphere.Identity.Persistence
         {
             services.AddDbContext<IdentityDbContext>(opt =>
             {
-                opt.UseSqlServer("Server=.;Database=IdentityDb;Trusted_Connection=True;TrustServerCertificate=True;");
+                opt.UseSqlServer("Server=.;Database=EventSphere.IdentityDb;Trusted_Connection=True;TrustServerCertificate=True;");
             });
 
             services.AddScoped<IUserReadRepository, EfUserReadRepository>();
