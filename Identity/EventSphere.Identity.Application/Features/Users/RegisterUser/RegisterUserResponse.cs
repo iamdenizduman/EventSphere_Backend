@@ -1,4 +1,4 @@
-﻿namespace EventSphere.Identity.Application.Features.User.RegisterUser
+﻿namespace EventSphere.Identity.Application.Features.Users.RegisterUser
 {
     public class RegisterUserResponse
     {

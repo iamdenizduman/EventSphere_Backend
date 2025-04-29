@@ -1,4 +1,4 @@
-﻿namespace EventSphere.Identity.Application.Common.Models.Authentication
+﻿namespace EventSphere.Identity.Application.Models.Authentication
 {
     public class AccessToken
     {

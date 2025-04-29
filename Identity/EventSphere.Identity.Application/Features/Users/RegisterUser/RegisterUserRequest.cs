@@ -1,7 +1,7 @@
 ﻿using EventSphere.Core.Result;
 using MediatR;
 
-namespace EventSphere.Identity.Application.Features.User.RegisterUser
+namespace EventSphere.Identity.Application.Features.Users.RegisterUser
 {
     public class RegisterUserRequest : IRequest<DataResult<RegisterUserResponse>>
     {

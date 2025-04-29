@@ -4,7 +4,7 @@ using EventSphere.Identity.Application.Common.Interfaces.Security;
 using EventSphere.Identity.Domain.Repositories;
 using MediatR;
 
-namespace EventSphere.Identity.Application.Features.User.RegisterUser
+namespace EventSphere.Identity.Application.Features.Users.RegisterUser
 {
     public class RegisterUserHandler(IUserWriteRepository userWriteRepository, IUserReadRepository userReadRepository, IPasswordHasher passwordHasher) : IRequestHandler<RegisterUserRequest, DataResult<RegisterUserResponse>>
     {
