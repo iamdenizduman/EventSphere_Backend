@@ -6,11 +6,11 @@ using MediatR;
 
 namespace EventSphere.Identity.Application.Features.Users.RegisterUser
 {
-    public class RegisterUserHandler(IUserWriteRepository userWriteRepository, IUserReadRepository userReadRepository, IPasswordHasher passwordHasher) : IRequestHandler<RegisterUserRequest, DataResult<RegisterUserResponse>>
+    public class RegisterUserHandler(IUserWriteRepository userWriteRepository, IUserReadRepository userReadRepository, IHashingHelper hashingHelper) : IRequestHandler<RegisterUserRequest, DataResult<RegisterUserResponse>>
     {
         private readonly IUserWriteRepository _userWriteRepository = userWriteRepository;
         private readonly IUserReadRepository _userReadRepository = userReadRepository;
-        private readonly IPasswordHasher _passwordHasher = passwordHasher;
+        private readonly IHashingHelper _hashingHelper = hashingHelper;
 
         public async Task<DataResult<RegisterUserResponse>> Handle(RegisterUserRequest request, CancellationToken cancellationToken)
         {
@@ -18,8 +18,8 @@ namespace EventSphere.Identity.Application.Features.Users.RegisterUser
 
             if (existMail != null)
                 return new DataResult<RegisterUserResponse>(null, ResultStatus.Error, "Mail sistemde kayıtlı");
-                
-            _passwordHasher.CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
+
+            _hashingHelper.CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
             Domain.Entities.User user = new()
             {
                 FirstName = request.FirstName,

@@ -1,6 +1,7 @@
 ﻿using EventSphere.Core.Result;
 using EventSphere.Identity.Application.Common.Interfaces.Authentication;
 using EventSphere.Identity.Application.Common.Interfaces.Security;
+using EventSphere.Identity.Application.Models.OperationClaims;
 using EventSphere.Identity.Domain.Repositories;
 using MediatR;
 
@@ -23,7 +24,7 @@ namespace EventSphere.Identity.Application.Features.Users.LoginUser
 
         public async Task<DataResult<LoginUserResponse>> Handle(LoginUserRequest request, CancellationToken cancellationToken)
         {
-            var user = await _userReadRepository.GetSingleAsync(u => u.Email == request.Email);
+            var user = await _userReadRepository.GetSingleAsync(u => u.Email == request.Email, u => u.UserOperationClaims);
             if (user == null)
                 return new DataResult<LoginUserResponse>(null, Core.Enums.ResultStatus.Error, "Kullanıcı adı veya şifre hatalı");
 
@@ -32,7 +33,12 @@ namespace EventSphere.Identity.Application.Features.Users.LoginUser
             if (!passwordCheck)
                 return new DataResult<LoginUserResponse>(null, Core.Enums.ResultStatus.Error, "Kullanıcı adı veya şifre hatalı");
 
-            var accessToken = _tokenHelper.CreateToken(user, null);
+            var userClaims = (await _userReadRepository.GetUserWithClaimsAsync(request.Email))?.UserOperationClaims.Select(uoc => new OperationClaimDto
+            {
+                Name = uoc.OperationClaim.Name
+            })?.ToList();           
+           
+            var accessToken = _tokenHelper.CreateToken(user, userClaims);
 
             var loginResponse = new LoginUserResponse
             {

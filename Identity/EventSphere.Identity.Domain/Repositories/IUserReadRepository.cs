@@ -5,5 +5,6 @@ namespace EventSphere.Identity.Domain.Repositories
 {
     public interface IUserReadRepository : IEntityReadRepository<User>
     {
+        Task<User?> GetUserWithClaimsAsync(string email);
     }
 }
