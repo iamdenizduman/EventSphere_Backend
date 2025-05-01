@@ -4,6 +4,7 @@ namespace EventSphere.EventService.Domain.Entities
 {
     public class EventSession : BaseEntity
     {
+        public int RecordId { get; set; }
         public long EventId { get; set; }
         public Event Event { get; set; }
         public long SpeakerId { get; set; }

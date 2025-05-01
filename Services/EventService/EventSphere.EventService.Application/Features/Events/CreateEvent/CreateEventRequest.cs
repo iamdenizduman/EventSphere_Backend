@@ -1,10 +1,10 @@
-﻿using EventSphere.Core.Entity.Abstract;
+﻿using EventSphere.Core.Result;
+using MediatR;
 
-namespace EventSphere.EventService.Domain.Entities
+namespace EventSphere.EventService.Application.Features.Events.CreateEvent
 {
-    public class Event : BaseEntity
+    public class CreateEventRequest : IRequest<DataResult<CreateEventResponse>>
     {
-        public int RecordId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public DateTime StartDate { get; set; }
@@ -12,8 +12,5 @@ namespace EventSphere.EventService.Domain.Entities
         public int Capacity { get; set; }
         public string Location { get; set; }
         public decimal Price { get; set; }
-        public bool IsStockCreated { get; set; }
-
-        public ICollection<EventSession> EventSessions { get; set; }
     }
 }

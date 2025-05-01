@@ -4,6 +4,7 @@ namespace EventSphere.EventService.Domain.Entities
 {
     public class Speaker : BaseEntity
     {
+        public int RecordId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Bio { get; set; }
