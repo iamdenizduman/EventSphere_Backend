@@ -3,9 +3,8 @@ using EventSphere.Core.Result;
 using EventSphere.EventService.Application.Repositories;
 using EventSphere.EventService.Domain.DTOs.Events.Response;
 using EventSphere.EventService.Domain.DTOs.EventSessions.Response;
+using EventSphere.EventService.Domain.DTOs.Speakers.Response;
 using MediatR;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace EventSphere.EventService.Application.Features.Events.GetEvents
 {
@@ -37,24 +36,25 @@ namespace EventSphere.EventService.Application.Features.Events.GetEvents
                     {
                         Description = es.Description,
                         EndTime = es.EndTime,
-                        Speaker = es.Speaker,
+                        SpeakerDto = new SpeakerDto
+                        {
+                            Bio = es.Speaker.Bio,
+                            FirstName = es.Speaker.FirstName,
+                            LastName = es.Speaker.LastName,
+                            ProfilePictureUrl = es.Speaker.ProfilePictureUrl
+                        },
                         StartTime = es.StartTime,
                         Title = es.Title
                     })?.ToList()
                 }).ToList();
 
-                var jsonResponse = JsonSerializer.Serialize(new GetEventsResponse
-                {
-                    EventDtos = eventDtoList
-                });
+                var res = new GetEventsResponse { EventDtos = eventDtoList };
 
-                return new DataResult<GetEventsResponse>(JsonSerializer.Deserialize<GetEventsResponse>(jsonResponse),
-                  ResultStatus.Success, "Event detay listesi getirildi");
+                return new DataResult<GetEventsResponse>(res, ResultStatus.Success, "Event detay listesi getirildi");
             }
             catch (Exception ex)
             {
-                return new DataResult<GetEventsResponse>(null,
-                               ResultStatus.Error, $"Event detay listesi getirilirken bir hata ile karşılaşıldı: {ex.Message}");
+                return new DataResult<GetEventsResponse>(null, ResultStatus.Error, $"Event detay listesi getirilirken bir hata ile karşılaşıldı: {ex.Message}");
             }
         }
     }

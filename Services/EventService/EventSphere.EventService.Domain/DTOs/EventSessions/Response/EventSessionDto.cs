@@ -1,4 +1,5 @@
-﻿using EventSphere.EventService.Domain.Entities;
+﻿using EventSphere.EventService.Domain.DTOs.Speakers.Response;
+using EventSphere.EventService.Domain.Entities;
 
 namespace EventSphere.EventService.Domain.DTOs.EventSessions.Response
 {
@@ -8,6 +9,6 @@ namespace EventSphere.EventService.Domain.DTOs.EventSessions.Response
         public string Description { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
-        public Speaker Speaker { get; set; }
+        public SpeakerDto SpeakerDto { get; set; }
     }
 }
