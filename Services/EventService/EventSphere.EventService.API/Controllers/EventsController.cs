@@ -1,4 +1,5 @@
 ﻿using EventSphere.EventService.Application.Features.Events.CreateEvent;
+using EventSphere.EventService.Application.Features.Events.GetEvents;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,8 +16,14 @@ namespace EventSphere.EventService.API.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost]
+        [HttpPost(nameof(CreateEvent))]
         public async Task<IActionResult> CreateEvent(CreateEventRequest request)
+        {
+            var response = await _mediator.Send(request);
+            return Ok(response);
+        }
+        [HttpPost(nameof(GetEvents))]
+        public async Task<IActionResult> GetEvents(GetEventsRequest request)
         {
             var response = await _mediator.Send(request);
             return Ok(response);
