@@ -25,7 +25,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventService", "EventServic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.EventService.Domain", "Services\EventService\EventSphere.EventService.Domain\EventSphere.EventService.Domain.csproj", "{82CE5307-8343-49F1-B494-681F1946E0F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.EventService.Application", "Services\EventService\EventSphere.EventService.Application\EventSphere.EventService.Application.csproj", "{0BBD5BD3-FF88-498D-ADD3-F03ECFFD7419}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.EventService.Application", "Services\EventService\EventSphere.EventService.Application\EventSphere.EventService.Application.csproj", "{0BBD5BD3-FF88-498D-ADD3-F03ECFFD7419}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.EventService.Infrastructure", "Services\EventService\EventSphere.EventService.Infrastructure\EventSphere.EventService.Infrastructure.csproj", "{82A1DDB1-D1DA-4BA8-8E73-85E7F4E4925F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.EventService.Persistence", "Services\EventService\EventSphere.EventService.Persistence\EventSphere.EventService.Persistence.csproj", "{22B532E7-0983-435D-BF98-4EAD62AA1A54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.EventService.API", "Services\EventService\EventSphere.EventService.API\EventSphere.EventService.API.csproj", "{8F7506F5-AFAE-468E-90B2-7B99FD9455B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +71,18 @@ Global
 		{0BBD5BD3-FF88-498D-ADD3-F03ECFFD7419}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BBD5BD3-FF88-498D-ADD3-F03ECFFD7419}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BBD5BD3-FF88-498D-ADD3-F03ECFFD7419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82A1DDB1-D1DA-4BA8-8E73-85E7F4E4925F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82A1DDB1-D1DA-4BA8-8E73-85E7F4E4925F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82A1DDB1-D1DA-4BA8-8E73-85E7F4E4925F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82A1DDB1-D1DA-4BA8-8E73-85E7F4E4925F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22B532E7-0983-435D-BF98-4EAD62AA1A54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22B532E7-0983-435D-BF98-4EAD62AA1A54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22B532E7-0983-435D-BF98-4EAD62AA1A54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22B532E7-0983-435D-BF98-4EAD62AA1A54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F7506F5-AFAE-468E-90B2-7B99FD9455B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F7506F5-AFAE-468E-90B2-7B99FD9455B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F7506F5-AFAE-468E-90B2-7B99FD9455B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F7506F5-AFAE-468E-90B2-7B99FD9455B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +97,9 @@ Global
 		{2515B82C-F3E6-450B-A9CD-23CE0723E987} = {B9ABF627-C9FC-407E-B37A-B1A708983C27}
 		{82CE5307-8343-49F1-B494-681F1946E0F6} = {2515B82C-F3E6-450B-A9CD-23CE0723E987}
 		{0BBD5BD3-FF88-498D-ADD3-F03ECFFD7419} = {2515B82C-F3E6-450B-A9CD-23CE0723E987}
+		{82A1DDB1-D1DA-4BA8-8E73-85E7F4E4925F} = {2515B82C-F3E6-450B-A9CD-23CE0723E987}
+		{22B532E7-0983-435D-BF98-4EAD62AA1A54} = {2515B82C-F3E6-450B-A9CD-23CE0723E987}
+		{8F7506F5-AFAE-468E-90B2-7B99FD9455B9} = {2515B82C-F3E6-450B-A9CD-23CE0723E987}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D780CA7-207C-472E-BAB0-CA7D6116899F}

@@ -46,7 +46,6 @@ namespace EventSphere.EventService.Application.Features.Events.CreateEvent
                     Capacity = request.Capacity,
                     EventId = entity.RecordId
                 };
-
                 await _eventPublisher.PublishEventCreatedAsync(@event);
                 await _unitOfWork.CommitAsync();
 
@@ -61,7 +60,7 @@ namespace EventSphere.EventService.Application.Features.Events.CreateEvent
             {
                 await _unitOfWork.RollbackAsync();
 
-                return new DataResult<CreateEventResponse>(null, Core.Enums.ResultStatus.Success, ex.Message);
+                return new DataResult<CreateEventResponse>(null, Core.Enums.ResultStatus.Error, ex.Message);
             }
         }
     }
