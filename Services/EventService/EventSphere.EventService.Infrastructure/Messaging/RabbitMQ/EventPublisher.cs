@@ -1,5 +1,5 @@
-﻿using EventSphere.EventService.Application.Interfaces.Messaging;
-using EventSphere.EventService.Domain.DTOs.Events.Messaging;
+﻿using EventSphere.Core.Entity.Messaging.Events;
+using EventSphere.EventService.Application.Interfaces.Messaging;
 using MassTransit;
 
 namespace EventSphere.EventService.Infrastructure.Messaging.RabbitMQ

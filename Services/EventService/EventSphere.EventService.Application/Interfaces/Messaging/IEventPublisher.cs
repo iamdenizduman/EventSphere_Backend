@@ -1,4 +1,4 @@
-﻿using EventSphere.EventService.Domain.DTOs.Events.Messaging;
+﻿using EventSphere.Core.Entity.Messaging.Events;
 
 namespace EventSphere.EventService.Application.Interfaces.Messaging
 {

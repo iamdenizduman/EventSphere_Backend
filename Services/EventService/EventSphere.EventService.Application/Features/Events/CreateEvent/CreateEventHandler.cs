@@ -1,8 +1,8 @@
-﻿using EventSphere.Core.Repository.Interfaces;
+﻿using EventSphere.Core.Entity.Messaging.Events;
+using EventSphere.Core.Repository.Interfaces;
 using EventSphere.Core.Result;
 using EventSphere.EventService.Application.Interfaces.Messaging;
 using EventSphere.EventService.Application.Repositories;
-using EventSphere.EventService.Domain.DTOs.Events.Messaging;
 using EventSphere.EventService.Domain.Entities;
 using MediatR;
 
