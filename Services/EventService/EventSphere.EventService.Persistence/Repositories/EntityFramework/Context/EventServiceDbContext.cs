@@ -17,7 +17,16 @@ namespace EventSphere.EventService.Persistence.Repositories.EntityFramework.Cont
             });
             modelBuilder.Entity<EventSession>(entity =>
             {
-                entity.HasKey(e => e.RecordId);
+                entity.HasKey(e => e.RecordId); 
+
+                entity.HasOne(e => e.Event)
+                      .WithMany(e => e.EventSessions)  
+                      .HasForeignKey(es => es.EventId) 
+                      .HasPrincipalKey(e => e.RecordId);  
+
+                entity.HasOne(e => e.Speaker)
+                      .WithMany(e => e.EventSessions) 
+                      .HasForeignKey(es => es.SpeakerId);
             });
             modelBuilder.Entity<Speaker>(entity =>
             {

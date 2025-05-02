@@ -4,6 +4,7 @@ using EventSphere.EventService.Persistence.Repositories.EntityFramework.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EventSphere.EventService.Persistence.Migrations
 {
     [DbContext(typeof(EventServiceDbContext))]
-    partial class EventServiceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250502154113_mig_v3")]
+    partial class mig_v3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -95,10 +98,16 @@ namespace EventSphere.EventService.Persistence.Migrations
                     b.Property<int>("EventId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("EventRecordId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("ModifiedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("SpeakerId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SpeakerRecordId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("StartTime")
@@ -112,7 +121,11 @@ namespace EventSphere.EventService.Persistence.Migrations
 
                     b.HasIndex("EventId");
 
+                    b.HasIndex("EventRecordId");
+
                     b.HasIndex("SpeakerId");
+
+                    b.HasIndex("SpeakerRecordId");
 
                     b.ToTable("EventSessions");
                 });
@@ -158,16 +171,24 @@ namespace EventSphere.EventService.Persistence.Migrations
             modelBuilder.Entity("EventSphere.EventService.Domain.Entities.EventSession", b =>
                 {
                     b.HasOne("EventSphere.EventService.Domain.Entities.Event", "Event")
-                        .WithMany("EventSessions")
+                        .WithMany()
                         .HasForeignKey("EventId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("EventSphere.EventService.Domain.Entities.Speaker", "Speaker")
+                    b.HasOne("EventSphere.EventService.Domain.Entities.Event", null)
                         .WithMany("EventSessions")
+                        .HasForeignKey("EventRecordId");
+
+                    b.HasOne("EventSphere.EventService.Domain.Entities.Speaker", "Speaker")
+                        .WithMany()
                         .HasForeignKey("SpeakerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("EventSphere.EventService.Domain.Entities.Speaker", null)
+                        .WithMany("EventSessions")
+                        .HasForeignKey("SpeakerRecordId");
 
                     b.Navigation("Event");
 

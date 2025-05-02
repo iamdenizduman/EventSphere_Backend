@@ -31,7 +31,8 @@ namespace EventSphere.EventService.Application.Features.Events.CreateEvent
                 EndDate = request.EndDate,
                 Capacity = request.Capacity,
                 Location = request.Location,
-                Price = request.Price
+                Price = request.Price,
+                CreatedDate = DateTime.UtcNow
             };
 
             await _unitOfWork.BeginTransactionAsync();

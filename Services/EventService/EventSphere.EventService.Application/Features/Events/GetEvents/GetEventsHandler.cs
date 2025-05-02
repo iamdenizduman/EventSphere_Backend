@@ -1,11 +1,11 @@
 ﻿using EventSphere.Core.Enums;
-using EventSphere.Core.Repository.Interfaces;
 using EventSphere.Core.Result;
-using EventSphere.EventService.Application.Interfaces.Messaging;
 using EventSphere.EventService.Application.Repositories;
 using EventSphere.EventService.Domain.DTOs.Events.Response;
 using EventSphere.EventService.Domain.DTOs.EventSessions.Response;
 using MediatR;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace EventSphere.EventService.Application.Features.Events.GetEvents
 {
@@ -43,11 +43,13 @@ namespace EventSphere.EventService.Application.Features.Events.GetEvents
                     })?.ToList()
                 }).ToList();
 
-                return new DataResult<GetEventsResponse>(new GetEventsResponse
+                var jsonResponse = JsonSerializer.Serialize(new GetEventsResponse
                 {
                     EventDtos = eventDtoList
-                },
-                ResultStatus.Success, "Event detay listesi getirildi");
+                });
+
+                return new DataResult<GetEventsResponse>(JsonSerializer.Deserialize<GetEventsResponse>(jsonResponse),
+                  ResultStatus.Success, "Event detay listesi getirildi");
             }
             catch (Exception ex)
             {
