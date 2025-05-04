@@ -4,6 +4,17 @@ using EventSphere.EventService.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()      // Tüm kaynaklara izin
+              .AllowAnyMethod()      // Tüm HTTP metodlara izin
+              .AllowAnyHeader();     // Tüm headerlara izin
+    });
+});
+
 
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistenceServices();
@@ -22,10 +33,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowAll");
+
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
