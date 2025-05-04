@@ -42,7 +42,7 @@ namespace EventSphere.EventService.Application.Features.Events.CreateEvent
                 await _eventWriteRepository.AddAsync(entity);
                 await _unitOfWork.SaveChangesAsync();
 
-                EventCreated @event = new EventCreated
+                EventCreatedEvent @event = new EventCreatedEvent
                 {
                     Capacity = request.Capacity,
                     EventId = entity.RecordId

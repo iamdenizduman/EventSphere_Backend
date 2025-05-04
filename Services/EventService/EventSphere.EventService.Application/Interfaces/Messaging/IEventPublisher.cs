@@ -4,6 +4,6 @@ namespace EventSphere.EventService.Application.Interfaces.Messaging
 {
     public interface IEventPublisher
     {
-        Task PublishEventCreatedAsync(EventCreated @event);
+        Task PublishEventCreatedAsync(EventCreatedEvent @event);
     }
 }

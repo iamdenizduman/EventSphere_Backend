@@ -5,7 +5,7 @@ using MediatR;
 
 namespace EventSphere.EventService.Infrastructure.Messaging.RabbitMQ.Consumers
 {
-    public class StockCreatedEventConsumer : IConsumer<StockCreated>
+    public class StockCreatedEventConsumer : IConsumer<StockCreatedEvent>
     {
         private readonly IMediator _mediator;
 
@@ -14,7 +14,7 @@ namespace EventSphere.EventService.Infrastructure.Messaging.RabbitMQ.Consumers
             _mediator = mediator;
         }
 
-        public async Task Consume(ConsumeContext<StockCreated> context)
+        public async Task Consume(ConsumeContext<StockCreatedEvent> context)
         {
             var msg = context.Message;
             int recordId = msg.EventRecordId;

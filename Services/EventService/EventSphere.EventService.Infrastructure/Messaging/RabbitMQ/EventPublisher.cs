@@ -13,7 +13,7 @@ namespace EventSphere.EventService.Infrastructure.Messaging.RabbitMQ
             _sendEndpointProvider = sendEndpointProvider;
         }
 
-        public async Task PublishEventCreatedAsync(EventCreated @event)
+        public async Task PublishEventCreatedAsync(EventCreatedEvent @event)
         {
             ISendEndpoint sendEndPoint = await _sendEndpointProvider.GetSendEndpoint(new Uri($"queue:event-service-created-event-queue"));
 

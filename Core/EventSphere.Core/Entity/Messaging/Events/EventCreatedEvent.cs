@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace EventSphere.Core.Entity.Messaging.Events
 {
-    public class EventCreated
+    public class EventCreatedEvent
     {
-        public long EventId { get; set; }
+        public int EventId { get; set; }
         public int Capacity { get; set; }
     }
 }

@@ -1,0 +1,6 @@
+@EventSphere.StockService.API_HostAddress = http://localhost:5103
+
+GET {{EventSphere.StockService.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
