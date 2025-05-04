@@ -19,5 +19,9 @@ namespace EventSphere.EventService.Persistence.Repositories.EntityFramework.Repo
         {
             return await _context.Events.Include(e => e.EventSessions).ThenInclude(e => e.Speaker).ToListAsync();
         }
+        public async Task<Event> GetEventDetailsByIdAsync(int eventId)
+        {
+            return await _context.Events.Include(e => e.EventSessions).ThenInclude(e => e.Speaker).SingleOrDefaultAsync(e => e.RecordId == eventId);
+        }
     }
 }

@@ -4,6 +4,6 @@ namespace EventSphere.Identity.Application.Features.Users.LoginUser
 {
     public class LoginUserResponse
     {
-        public AccessToken Token { get; set; }
+        public AccessToken AccessToken { get; set; }
     }
 }

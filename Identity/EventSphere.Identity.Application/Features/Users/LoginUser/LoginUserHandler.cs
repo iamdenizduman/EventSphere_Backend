@@ -42,7 +42,7 @@ namespace EventSphere.Identity.Application.Features.Users.LoginUser
 
             var loginResponse = new LoginUserResponse
             {
-                Token = accessToken
+                AccessToken = accessToken
             };
 
             return new DataResult<LoginUserResponse>(loginResponse, Core.Enums.ResultStatus.Success);

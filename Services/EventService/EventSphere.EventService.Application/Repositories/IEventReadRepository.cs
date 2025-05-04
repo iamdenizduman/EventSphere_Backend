@@ -7,5 +7,6 @@ namespace EventSphere.EventService.Application.Repositories
     public interface IEventReadRepository : IEntityReadRepository<Event>
     {
         Task<List<Event>> GetEventDetailsAsync();
+        Task<Event> GetEventDetailsByIdAsync(int eventId);
     }
 }
