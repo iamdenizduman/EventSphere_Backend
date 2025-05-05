@@ -28,7 +28,7 @@ namespace EventSphere.OrderService.Application.Features.Orders.CreateOrder
 
         public async Task<DataResult<CreateOrderResponse>> Handle(CreateOrderRequest request, CancellationToken cancellationToken)
         {
-            var eventDto = await _eventServiceClient.GetEventByIdAsync(request.EventId);
+            var eventDto = await _eventServiceClient.GetEventPriceById(request.EventId);
 
             var entity = new Order
             {

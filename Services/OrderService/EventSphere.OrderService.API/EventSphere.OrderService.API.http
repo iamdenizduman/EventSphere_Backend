@@ -1,0 +1,6 @@
+@EventSphere.OrderService.API_HostAddress = http://localhost:5265
+
+GET {{EventSphere.OrderService.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
