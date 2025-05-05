@@ -1,4 +1,5 @@
 ﻿using EventSphere.Core.Entity.Messaging.Events;
+using EventSphere.Core.Entity.Messaging.Stocks;
 using EventSphere.StockService.Business.Abstract;
 using EventSphere.StockService.Entity.Dtos;
 using EventSphere.StockService.Entity.Enums;
@@ -39,6 +40,15 @@ namespace EventSphere.StockService.Business.Consumers
             };                     
 
             await _stockHistoryService.AddAsync(dto);
+
+            StockCreatedEvent @event = new StockCreatedEvent
+            {
+                EventRecordId = msg.EventId
+            };
+
+            ISendEndpoint sendEndPoint = await _sendEndpointProvider.GetSendEndpoint(new Uri($"queue:stock-service-created-stock-queue"));
+
+            await sendEndPoint.Send(@event);
         }
     }
 

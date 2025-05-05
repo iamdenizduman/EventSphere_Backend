@@ -39,9 +39,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.StockService.En
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.StockService.DataAccess", "Services\StockService\EventSphere.StockService.DataAccess\EventSphere.StockService.DataAccess.csproj", "{501978CA-84A9-4390-B981-3957C1442FDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.StockService.Business", "Services\StockService\EventSphere.StockService.Business\EventSphere.StockService.Business.csproj", "{1B7430E6-43AF-4C65-B7C3-02A328EBAF76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.StockService.Business", "Services\StockService\EventSphere.StockService.Business\EventSphere.StockService.Business.csproj", "{1B7430E6-43AF-4C65-B7C3-02A328EBAF76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.StockService.API", "Services\StockService\EventSphere.StockService.API\EventSphere.StockService.API.csproj", "{C52A1F64-3D44-4C08-A760-6408A10093E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.StockService.API", "Services\StockService\EventSphere.StockService.API\EventSphere.StockService.API.csproj", "{C52A1F64-3D44-4C08-A760-6408A10093E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OrderService", "OrderService", "{74EF5553-7141-4F74-A89F-D78FBBF29886}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.OrderService.Domain", "Services\OrderService\EventSphere.OrderService.Domain\EventSphere.OrderService.Domain.csproj", "{EFB4B76E-051E-41A6-82E0-B3604154E1EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.OrderService.Application", "Services\OrderService\EventSphere.OrderService.Application\EventSphere.OrderService.Application.csproj", "{A30E09CB-35FD-4B42-83B8-AA9D044EE928}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.OrderService.Infrastructure", "Services\OrderService\EventSphere.OrderService.Infrastructure\EventSphere.OrderService.Infrastructure.csproj", "{6F50C762-34C1-4D10-93C3-677D590FC3FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +117,18 @@ Global
 		{C52A1F64-3D44-4C08-A760-6408A10093E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C52A1F64-3D44-4C08-A760-6408A10093E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C52A1F64-3D44-4C08-A760-6408A10093E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFB4B76E-051E-41A6-82E0-B3604154E1EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB4B76E-051E-41A6-82E0-B3604154E1EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB4B76E-051E-41A6-82E0-B3604154E1EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB4B76E-051E-41A6-82E0-B3604154E1EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A30E09CB-35FD-4B42-83B8-AA9D044EE928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A30E09CB-35FD-4B42-83B8-AA9D044EE928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A30E09CB-35FD-4B42-83B8-AA9D044EE928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A30E09CB-35FD-4B42-83B8-AA9D044EE928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F50C762-34C1-4D10-93C3-677D590FC3FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F50C762-34C1-4D10-93C3-677D590FC3FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F50C762-34C1-4D10-93C3-677D590FC3FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F50C762-34C1-4D10-93C3-677D590FC3FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -131,6 +151,10 @@ Global
 		{501978CA-84A9-4390-B981-3957C1442FDF} = {0F1081A9-02E3-4CBF-9568-6F1838CC1E15}
 		{1B7430E6-43AF-4C65-B7C3-02A328EBAF76} = {0F1081A9-02E3-4CBF-9568-6F1838CC1E15}
 		{C52A1F64-3D44-4C08-A760-6408A10093E6} = {0F1081A9-02E3-4CBF-9568-6F1838CC1E15}
+		{74EF5553-7141-4F74-A89F-D78FBBF29886} = {B9ABF627-C9FC-407E-B37A-B1A708983C27}
+		{EFB4B76E-051E-41A6-82E0-B3604154E1EE} = {74EF5553-7141-4F74-A89F-D78FBBF29886}
+		{A30E09CB-35FD-4B42-83B8-AA9D044EE928} = {74EF5553-7141-4F74-A89F-D78FBBF29886}
+		{6F50C762-34C1-4D10-93C3-677D590FC3FF} = {74EF5553-7141-4F74-A89F-D78FBBF29886}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D780CA7-207C-472E-BAB0-CA7D6116899F}
