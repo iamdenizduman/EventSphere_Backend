@@ -7,5 +7,7 @@ namespace EventSphere.StockService.DataAccess.Abstract
     {
         Task AddAsync(Stock entity);
         Task<List<Stock>> GetAllAsync(Expression<Func<Stock, bool>>? predicate = null);
+        Task<Stock> GetAsync(Expression<Func<Stock, bool>> predicate);
+        Task UpdateFieldsAsync(Expression<Func<Stock, bool>> filterExpression, Dictionary<Expression<Func<Stock, object>>, object> updates);
     }
 }

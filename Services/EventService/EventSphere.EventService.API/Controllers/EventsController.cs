@@ -1,5 +1,6 @@
 ﻿using EventSphere.EventService.Application.Features.Events.CreateEvent;
 using EventSphere.EventService.Application.Features.Events.GetEventById;
+using EventSphere.EventService.Application.Features.Events.GetEventPriceById;
 using EventSphere.EventService.Application.Features.Events.GetEvents;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +32,12 @@ namespace EventSphere.EventService.API.Controllers
         }
         [HttpPost(nameof(GetEventById))]
         public async Task<IActionResult> GetEventById(GetEventByIdRequest request)
+        {
+            var response = await _mediator.Send(request);
+            return Ok(response);
+        }
+        [HttpPost(nameof(GetEventPriceById))]
+        public async Task<IActionResult> GetEventPriceById(GetEventPriceByIdRequest request)
         {
             var response = await _mediator.Send(request);
             return Ok(response);

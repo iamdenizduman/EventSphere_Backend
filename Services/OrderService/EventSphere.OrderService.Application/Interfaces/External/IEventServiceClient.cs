@@ -4,6 +4,6 @@ namespace EventSphere.OrderService.Application.Interfaces.External
 {
     public interface IEventServiceClient
     {
-        Task<EventPriceDto> GetEventPriceById(long eventId);
+        Task<EventPriceDto> GetEventPriceById(int eventId);
     }
 }

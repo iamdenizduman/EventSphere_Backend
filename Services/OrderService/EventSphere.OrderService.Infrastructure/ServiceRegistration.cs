@@ -5,6 +5,7 @@ using EventSphere.OrderService.Infrastructure.Messaging;
 using MassTransit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Net.Http;
 
 namespace EventSphere.OrderService.Infrastructure
 {

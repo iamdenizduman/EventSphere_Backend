@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\EventSphere.OrderService.Application\EventSphere.OrderService.Application.csproj" />
     <ProjectReference Include="..\EventSphere.OrderService.Infrastructure\EventSphere.OrderService.Infrastructure.csproj" />
     <ProjectReference Include="..\EventSphere.OrderService.Persistence\EventSphere.OrderService.Persistence.csproj" />

@@ -2,6 +2,7 @@
 using EventSphere.StockService.DataAccess.Abstract;
 using EventSphere.StockService.Entity.Dtos;
 using EventSphere.StockService.Entity.Entities;
+using System.Linq.Expressions;
 
 namespace EventSphere.StockService.Business.Concrete
 {
@@ -27,6 +28,22 @@ namespace EventSphere.StockService.Business.Concrete
             await _stockRepository.AddAsync(stock);
 
             return stock.Id;
+        }
+
+        public async Task<Stock> GetAsync(Expression<Func<Stock, bool>> predicate)
+        {
+            return await _stockRepository.GetAsync(predicate);
+        }
+
+        public async Task UpdateAsync(UpdateStockDto updateStockDto)
+        {           
+            await _stockRepository.UpdateFieldsAsync(
+            x => x.Id == updateStockDto.Id,
+            new Dictionary<Expression<Func<Stock, object>>, object>
+            {
+                { x => x.SoldQuantity, updateStockDto.SoldQuantity },
+                { x => x.AvailableQuantity, updateStockDto.AvailableQuantity},
+            });
         }
     }
 }

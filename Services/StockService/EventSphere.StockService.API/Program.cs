@@ -22,12 +22,17 @@ builder.Services.AddScoped<IStockService, StockService>();
 builder.Services.AddMassTransit(confg =>
 {
     confg.AddConsumer<EventCreatedEventConsumer>();
+    confg.AddConsumer<OrderCreatedEventConsumer>();
     confg.UsingRabbitMq((context, _confg) =>
     {
         _confg.Host(builder.Configuration["RabbitMQ"]);
         _confg.ReceiveEndpoint("event-service-created-event-queue", e =>
         {
             e.ConfigureConsumer<EventCreatedEventConsumer>(context);
+        });
+        _confg.ReceiveEndpoint("order-service-created-order-queue", e =>
+        {
+            e.ConfigureConsumer<OrderCreatedEventConsumer>(context);
         });
     });
 });

@@ -9,12 +9,22 @@ namespace EventSphere.OrderService.Infrastructure.External.Services
     public class EventServiceClient : IEventServiceClient
     {
         private readonly HttpClient _httpClient;
+        private readonly JsonSerializerOptions _jsonOptions;
 
-        public async Task<EventPriceDto> GetEventPriceById(long eventId)
+        public EventServiceClient(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+            _jsonOptions = new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase // Camel case özelliği ekleniyor
+            };
+        }
+
+        public async Task<EventPriceDto> GetEventPriceById(int eventId)
         {
             var requestPayload = new
             {
-                EventId = eventId
+                Id = eventId
             };
 
             var content = new StringContent(JsonSerializer.Serialize(requestPayload), Encoding.UTF8, "application/json");
@@ -23,7 +33,7 @@ namespace EventSphere.OrderService.Infrastructure.External.Services
             response.EnsureSuccessStatusCode();
 
             var responseContent = await response.Content.ReadAsStringAsync();
-            return JsonSerializer.Deserialize<EventPriceDto>(responseContent);
+            return JsonSerializer.Deserialize<EventPriceDto>(responseContent, _jsonOptions);
         }
     }
 }

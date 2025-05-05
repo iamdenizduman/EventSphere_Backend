@@ -28,5 +28,27 @@ namespace EventSphere.Core.Repository.Abstract.MongoDb
             }
             return await _collections.Find(predicate).ToListAsync();
         }
+
+        public async Task<T> GetAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _collections.Find(predicate).SingleOrDefaultAsync();
+        }
+
+        public async Task UpdateFieldsAsync(Expression<Func<T, bool>> filterExpression, Dictionary<Expression<Func<T, object>>, object> updates)
+        {
+            var filter = Builders<T>.Filter.Where(filterExpression);
+
+            var updateDefinition = new List<UpdateDefinition<T>>();
+
+            foreach (var update in updates)
+            {
+                updateDefinition.Add(Builders<T>.Update.Set(update.Key, update.Value));
+            }
+
+            var combinedUpdate = Builders<T>.Update.Combine(updateDefinition);
+
+            await _collections.UpdateOneAsync(filter, combinedUpdate);
+        }
+
     }
 }

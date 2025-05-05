@@ -7,8 +7,10 @@ namespace EventSphere.StockService.DataAccess.Concrete.MongoDb
 {
     public class MdbStockRepository : MdbBaseRepository<Stock>, IStockRepository
     {
+        private readonly MongoDbService _mongoDbService;
         public MdbStockRepository(MongoDbService mongoDbService) : base(mongoDbService)
         {
+            _mongoDbService = mongoDbService;
         }
     }
 }

@@ -43,15 +43,14 @@ namespace EventSphere.OrderService.Application.Features.Orders.CreateOrder
             await _unitOfWork.BeginTransactionAsync();
 
             try
-            {
-                await _unitOfWork.BeginTransactionAsync();
-                
+            {                
                 await _orderWriteRepository.AddAsync(entity);
                 await _unitOfWork.SaveChangesAsync();
 
                 OrderCreatedEvent @event = new()
                 {
-                    EventId = request.EventId
+                    EventId = request.EventId,
+                    Quantity = request.Quantity
                 };
 
                 await _orderPublisher.PublishOrderCreatedAsync(@event);
