@@ -45,15 +45,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.StockService.AP
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OrderService", "OrderService", "{74EF5553-7141-4F74-A89F-D78FBBF29886}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.OrderService.Domain", "Services\OrderService\EventSphere.OrderService.Domain\EventSphere.OrderService.Domain.csproj", "{EFB4B76E-051E-41A6-82E0-B3604154E1EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.OrderService.Domain", "Services\OrderService\EventSphere.OrderService.Domain\EventSphere.OrderService.Domain.csproj", "{EFB4B76E-051E-41A6-82E0-B3604154E1EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.OrderService.Application", "Services\OrderService\EventSphere.OrderService.Application\EventSphere.OrderService.Application.csproj", "{A30E09CB-35FD-4B42-83B8-AA9D044EE928}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.OrderService.Application", "Services\OrderService\EventSphere.OrderService.Application\EventSphere.OrderService.Application.csproj", "{A30E09CB-35FD-4B42-83B8-AA9D044EE928}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.OrderService.Infrastructure", "Services\OrderService\EventSphere.OrderService.Infrastructure\EventSphere.OrderService.Infrastructure.csproj", "{6F50C762-34C1-4D10-93C3-677D590FC3FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.OrderService.Infrastructure", "Services\OrderService\EventSphere.OrderService.Infrastructure\EventSphere.OrderService.Infrastructure.csproj", "{6F50C762-34C1-4D10-93C3-677D590FC3FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.OrderService.Persistence", "Services\OrderService\EventSphere.OrderService.Persistence\EventSphere.OrderService.Persistence.csproj", "{8F372F27-B127-4E42-A0D0-07EC6C232CA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.OrderService.Persistence", "Services\OrderService\EventSphere.OrderService.Persistence\EventSphere.OrderService.Persistence.csproj", "{8F372F27-B127-4E42-A0D0-07EC6C232CA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.OrderService.API", "Services\OrderService\EventSphere.OrderService.API\EventSphere.OrderService.API.csproj", "{9F426B84-66AA-44EF-8842-84CC7F9E2FAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.OrderService.API", "Services\OrderService\EventSphere.OrderService.API\EventSphere.OrderService.API.csproj", "{9F426B84-66AA-44EF-8842-84CC7F9E2FAA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PaymentService", "PaymentService", "{880046A1-206E-44FB-8564-9B5EAA1D35E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.PaymentService.Domain", "Services\PaymentService\EventSphere.PaymentService.Domain\EventSphere.PaymentService.Domain.csproj", "{B49225D8-1827-48E3-82BE-549A7E762DB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +145,10 @@ Global
 		{9F426B84-66AA-44EF-8842-84CC7F9E2FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F426B84-66AA-44EF-8842-84CC7F9E2FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F426B84-66AA-44EF-8842-84CC7F9E2FAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B49225D8-1827-48E3-82BE-549A7E762DB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B49225D8-1827-48E3-82BE-549A7E762DB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B49225D8-1827-48E3-82BE-549A7E762DB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B49225D8-1827-48E3-82BE-549A7E762DB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,6 +177,8 @@ Global
 		{6F50C762-34C1-4D10-93C3-677D590FC3FF} = {74EF5553-7141-4F74-A89F-D78FBBF29886}
 		{8F372F27-B127-4E42-A0D0-07EC6C232CA3} = {74EF5553-7141-4F74-A89F-D78FBBF29886}
 		{9F426B84-66AA-44EF-8842-84CC7F9E2FAA} = {74EF5553-7141-4F74-A89F-D78FBBF29886}
+		{880046A1-206E-44FB-8564-9B5EAA1D35E4} = {B9ABF627-C9FC-407E-B37A-B1A708983C27}
+		{B49225D8-1827-48E3-82BE-549A7E762DB4} = {880046A1-206E-44FB-8564-9B5EAA1D35E4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D780CA7-207C-472E-BAB0-CA7D6116899F}
