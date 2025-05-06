@@ -1,21 +1,23 @@
 ﻿using EventSphere.Core.Entity.Messaging.Orders;
+using EventSphere.Core.Entity.Messaging.Stocks;
 using EventSphere.StockService.Business.Abstract;
 using EventSphere.StockService.Entity.Dtos;
 using EventSphere.StockService.Entity.Enums;
 using MassTransit;
-using MassTransit.Mediator;
 
 namespace EventSphere.StockService.Business.Consumers
 {
     public class OrderCreatedEventConsumer : IConsumer<OrderCreatedEvent>
     {
+        private readonly ISendEndpointProvider _sendEndpointProvider;
         private readonly IStockService _stockService;
         private readonly IStockHistoryService _stockHistoryService;
 
-        public OrderCreatedEventConsumer(IStockService stockService, IStockHistoryService stockHistoryService)
+        public OrderCreatedEventConsumer(IStockService stockService, IStockHistoryService stockHistoryService, ISendEndpointProvider sendEndpointProvider)
         {
             _stockService = stockService;
             _stockHistoryService = stockHistoryService;
+            _sendEndpointProvider = sendEndpointProvider;
         }
 
         public async Task Consume(ConsumeContext<OrderCreatedEvent> context)
@@ -45,6 +47,15 @@ namespace EventSphere.StockService.Business.Consumers
             };
 
             await _stockHistoryService.AddAsync(addStockHistoryDto);
+
+            StockReservedEvent @event = new()
+            {
+                EventRecordId = eventId
+            };
+
+            ISendEndpoint sendEndPoint = await _sendEndpointProvider.GetSendEndpoint(new Uri($"queue:stock-service-reserved-stock-queue"));
+
+            await sendEndPoint.Send(@event);
         }
     }
 }
