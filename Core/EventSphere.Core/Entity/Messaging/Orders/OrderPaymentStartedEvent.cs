@@ -4,6 +4,7 @@
     {
         public int BuyerId { get; set; }
         public int EventId { get; set; }
+        public int OrderId { get; set; }
         public decimal TotalPrice { get; set; }
     }
 }

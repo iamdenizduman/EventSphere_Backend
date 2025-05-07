@@ -5,6 +5,8 @@
         public decimal Value { get; }
         public string Currency { get; }
 
+        private Money() { }
+
         public Money(decimal value, string currency)
         {
             if (value <= 0)

@@ -45,6 +45,7 @@ namespace EventSphere.OrderService.Infrastructure.Messaging.Consumers
                 {
                     BuyerId = order.BuyerId,
                     EventId = order.EventId,
+                    OrderId = order.Id,
                     TotalPrice = order.TotalPrice
                 };
 

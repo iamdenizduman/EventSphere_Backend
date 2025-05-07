@@ -59,7 +59,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PaymentService", "PaymentSe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.PaymentService.Domain", "Services\PaymentService\EventSphere.PaymentService.Domain\EventSphere.PaymentService.Domain.csproj", "{B49225D8-1827-48E3-82BE-549A7E762DB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.PaymentService.Application", "Services\PaymentService\EventSphere.PaymentService.Application\EventSphere.PaymentService.Application.csproj", "{C47D054F-9AF2-4F60-AFF4-915CCB7E7BC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.PaymentService.Application", "Services\PaymentService\EventSphere.PaymentService.Application\EventSphere.PaymentService.Application.csproj", "{C47D054F-9AF2-4F60-AFF4-915CCB7E7BC4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.PaymentService.Infrastructure", "Services\PaymentService\EventSphere.PaymentService.Infrastructure\EventSphere.PaymentService.Infrastructure.csproj", "{606828E3-6C39-47CE-B4D9-3BBB140040D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.PaymentService.Persistence", "Services\PaymentService\EventSphere.PaymentService.Persistence\EventSphere.PaymentService.Persistence.csproj", "{31801174-E36C-441E-9B6F-32903770BB89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.PaymentService.API", "Services\PaymentService\EventSphere.PaymentService.API\EventSphere.PaymentService.API.csproj", "{633F8705-1AB3-4695-A6AE-6D5C5F8EAE09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -155,6 +161,18 @@ Global
 		{C47D054F-9AF2-4F60-AFF4-915CCB7E7BC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C47D054F-9AF2-4F60-AFF4-915CCB7E7BC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C47D054F-9AF2-4F60-AFF4-915CCB7E7BC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{606828E3-6C39-47CE-B4D9-3BBB140040D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{606828E3-6C39-47CE-B4D9-3BBB140040D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{606828E3-6C39-47CE-B4D9-3BBB140040D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{606828E3-6C39-47CE-B4D9-3BBB140040D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31801174-E36C-441E-9B6F-32903770BB89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31801174-E36C-441E-9B6F-32903770BB89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31801174-E36C-441E-9B6F-32903770BB89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31801174-E36C-441E-9B6F-32903770BB89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{633F8705-1AB3-4695-A6AE-6D5C5F8EAE09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{633F8705-1AB3-4695-A6AE-6D5C5F8EAE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{633F8705-1AB3-4695-A6AE-6D5C5F8EAE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{633F8705-1AB3-4695-A6AE-6D5C5F8EAE09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -186,6 +204,9 @@ Global
 		{880046A1-206E-44FB-8564-9B5EAA1D35E4} = {B9ABF627-C9FC-407E-B37A-B1A708983C27}
 		{B49225D8-1827-48E3-82BE-549A7E762DB4} = {880046A1-206E-44FB-8564-9B5EAA1D35E4}
 		{C47D054F-9AF2-4F60-AFF4-915CCB7E7BC4} = {880046A1-206E-44FB-8564-9B5EAA1D35E4}
+		{606828E3-6C39-47CE-B4D9-3BBB140040D1} = {880046A1-206E-44FB-8564-9B5EAA1D35E4}
+		{31801174-E36C-441E-9B6F-32903770BB89} = {880046A1-206E-44FB-8564-9B5EAA1D35E4}
+		{633F8705-1AB3-4695-A6AE-6D5C5F8EAE09} = {880046A1-206E-44FB-8564-9B5EAA1D35E4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D780CA7-207C-472E-BAB0-CA7D6116899F}
