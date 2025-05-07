@@ -1,8 +1,12 @@
 using EventSphere.PaymentService.Persistence;
+using EventSphere.PaymentService.Application;
+using EventSphere.PaymentService.Infrastructure;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+builder.Services.AddInfrastructureServices(builder.Configuration);
+builder.Services.AddApplicationServices();
 builder.Services.AddPersistenceServices();
 
 builder.Services.AddControllers();

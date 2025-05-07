@@ -19,6 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EventSphere.PaymentService.Application\EventSphere.PaymentService.Application.csproj" />
+    <ProjectReference Include="..\EventSphere.PaymentService.Infrastructure\EventSphere.PaymentService.Infrastructure.csproj" />
     <ProjectReference Include="..\EventSphere.PaymentService.Persistence\EventSphere.PaymentService.Persistence.csproj" />
   </ItemGroup>
 

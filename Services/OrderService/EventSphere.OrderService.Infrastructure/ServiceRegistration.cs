@@ -2,6 +2,7 @@
 using EventSphere.OrderService.Application.Interfaces.Messaging;
 using EventSphere.OrderService.Infrastructure.External.Services;
 using EventSphere.OrderService.Infrastructure.Messaging;
+using EventSphere.OrderService.Infrastructure.Messaging.Consumers;
 using MassTransit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,9 +23,16 @@ namespace EventSphere.OrderService.Infrastructure
 
             services.AddMassTransit(confg =>
             {
+                confg.AddConsumer<StockReservedEventConsumer>();
+
                 confg.UsingRabbitMq((context, _confg) =>
                 {
                     _confg.Host(configuration["RabbitMQ"]);
+                    
+                    _confg.ReceiveEndpoint("stock-service-reserved-stock-queue", e =>
+                    {
+                        e.ConfigureConsumer<StockReservedEventConsumer>(context);
+                    });
                 });
             });
         }

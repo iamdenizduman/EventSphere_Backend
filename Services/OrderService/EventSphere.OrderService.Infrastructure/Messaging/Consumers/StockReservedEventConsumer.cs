@@ -28,10 +28,12 @@ namespace EventSphere.OrderService.Infrastructure.Messaging.Consumers
             var msg = context.Message;
             var eventId = msg.EventRecordId;
 
-            var order = await _orderReadRepository.GetSingleAsync(o => o.Id == eventId);
+            var order = await _orderReadRepository.GetSingleAsync(o => o.EventId == eventId);
             
             order.Status = OrderStatus.StockReserved;
+
             _orderWriteRepository.Update(order);
+            await _orderWriteRepository.SaveChangesAsync();
 
             await _unitOfWork.BeginTransactionAsync();
             try
