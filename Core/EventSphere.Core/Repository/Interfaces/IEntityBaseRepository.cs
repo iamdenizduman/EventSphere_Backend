@@ -3,7 +3,7 @@
 namespace EventSphere.Core.Repository.Interfaces
 {
     public interface IEntityBaseRepository<T>
-        where T : class, IEntity, new()
+        where T : class, IEntity
     {
 
     }

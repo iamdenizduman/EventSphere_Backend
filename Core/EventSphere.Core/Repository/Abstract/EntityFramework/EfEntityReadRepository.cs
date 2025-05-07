@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 namespace EventSphere.Core.Repository.Abstract.EntityFramework
 {
     public abstract class EfEntityReadRepository<T>(DbContext context) : IEntityReadRepository<T>, IEntityBaseRepository<T>
-        where T : class, IEntity, new()
+        where T : class, IEntity
     {
         private readonly DbContext _context = context;
 

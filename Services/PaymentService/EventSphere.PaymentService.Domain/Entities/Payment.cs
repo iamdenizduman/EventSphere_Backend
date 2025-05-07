@@ -1,9 +1,10 @@
-﻿using EventSphere.PaymentService.Domain.Enums;
+﻿using EventSphere.Core.Entity.Interfaces;
+using EventSphere.PaymentService.Domain.Enums;
 using EventSphere.PaymentService.Domain.ValueObjects;
 
 namespace EventSphere.PaymentService.Domain.Entities
 {
-    public class Payment
+    public class Payment : IEntity
     {
         public Guid Id { get; private set; }
         public int OrderId { get; private set; }

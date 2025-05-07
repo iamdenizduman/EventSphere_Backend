@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 namespace EventSphere.Core.Repository.Interfaces
 {
     public interface IEntityReadRepository<T> : IEntityBaseRepository<T>
-        where T : class, IEntity, new()
+        where T : class, IEntity
     {
         Task<T?> GetSingleAsync(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includes);
         IQueryable<T> GetAll(Expression<Func<T, bool>>? predicate = null, params Expression<Func<T, object>>[] includes);

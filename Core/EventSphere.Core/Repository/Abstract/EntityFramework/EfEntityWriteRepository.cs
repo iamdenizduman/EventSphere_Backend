@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace EventSphere.Core.Repository.Abstract.EntityFramework
 {
     public abstract class EfEntityWriteRepository<T>(DbContext context) : IEntityWriteRepository<T>, IEntityBaseRepository<T>
-        where T : class, IEntity, new()
+        where T : class, IEntity
     {
         private readonly DbContext _context = context;
 

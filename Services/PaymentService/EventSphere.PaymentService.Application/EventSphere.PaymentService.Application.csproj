@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Core\EventSphere.Core\EventSphere.Core.csproj" />
+    <ProjectReference Include="..\EventSphere.PaymentService.Domain\EventSphere.PaymentService.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,7 +3,7 @@
 namespace EventSphere.Core.Repository.Interfaces
 {
     public interface IEntityWriteRepository<T> : IEntityBaseRepository<T>
-        where T : class, IEntity, new()
+        where T : class, IEntity
     {
         Task AddAsync(T entity);
         void Remove(T entity);
