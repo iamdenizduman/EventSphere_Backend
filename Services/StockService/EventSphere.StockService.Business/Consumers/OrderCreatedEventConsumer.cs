@@ -25,6 +25,7 @@ namespace EventSphere.StockService.Business.Consumers
             var req = context.Message;
             int eventId = req.EventId;
             int quantity = req.Quantity;
+            int orderId = req.OrderId;
 
             var stock = await _stockService.GetAsync(s => s.EventId == eventId);
 
@@ -50,7 +51,8 @@ namespace EventSphere.StockService.Business.Consumers
 
             StockReservedEvent @event = new()
             {
-                EventRecordId = eventId
+                EventRecordId = eventId,
+                OrderId = orderId
             };
 
             ISendEndpoint sendEndPoint = await _sendEndpointProvider.GetSendEndpoint(new Uri($"queue:stock-service-reserved-stock-queue"));

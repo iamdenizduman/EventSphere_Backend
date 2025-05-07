@@ -30,7 +30,7 @@ namespace EventSphere.OrderService.Application.Features.Orders.CreateOrder
         {
             var eventDto = await _eventServiceClient.GetEventPriceById(request.EventId);
 
-            var entity = new Order
+            var order = new Order
             {
                 BuyerId = request.BuyerId,
                 EventId = request.EventId,
@@ -44,13 +44,14 @@ namespace EventSphere.OrderService.Application.Features.Orders.CreateOrder
 
             try
             {                
-                await _orderWriteRepository.AddAsync(entity);
+                await _orderWriteRepository.AddAsync(order);
                 await _unitOfWork.SaveChangesAsync();
 
                 OrderCreatedEvent @event = new()
                 {
                     EventId = request.EventId,
-                    Quantity = request.Quantity
+                    Quantity = request.Quantity,
+                    OrderId = order.Id
                 };
 
                 await _orderPublisher.PublishOrderCreatedAsync(@event);

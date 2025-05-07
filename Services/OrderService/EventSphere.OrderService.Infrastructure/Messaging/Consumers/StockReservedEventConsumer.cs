@@ -27,8 +27,9 @@ namespace EventSphere.OrderService.Infrastructure.Messaging.Consumers
         {
             var msg = context.Message;
             var eventId = msg.EventRecordId;
+            var orderId = msg.OrderId;
 
-            var order = await _orderReadRepository.GetSingleAsync(o => o.EventId == eventId);
+            var order = await _orderReadRepository.GetSingleAsync(o => o.EventId == eventId && o.Id == orderId);
             
             order.Status = OrderStatus.StockReserved;
 

@@ -1,4 +1,7 @@
-﻿using EventSphere.PaymentService.Infrastructure.Messaging.Consumers;
+﻿using EventSphere.PaymentService.Application.Interfaces.Services.Iyzico;
+using EventSphere.PaymentService.Infrastructure.Configurations;
+using EventSphere.PaymentService.Infrastructure.Messaging.Consumers;
+using EventSphere.PaymentService.Infrastructure.Services.Iyzico;
 using MassTransit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +25,8 @@ namespace EventSphere.PaymentService.Infrastructure
                         e.ConfigureConsumer<OrderPaymentStartedEventConsumer>(context);
                     });
                 });
+
+                services.AddScoped<IIyzicoPaymentService, IyzicoPaymentService>();
             });
         }
     }

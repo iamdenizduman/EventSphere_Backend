@@ -3,5 +3,6 @@
     public class StockReservedEvent
     {
         public int EventRecordId { get; set; }
+        public int OrderId { get; set; }
     }
 }
