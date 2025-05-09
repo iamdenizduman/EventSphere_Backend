@@ -23,6 +23,7 @@ namespace EventSphere.EventService.Application.Features.Events.GetEvents
                 var eventDetailsList = await _eventReadRepository.GetEventDetailsAsync();
                 var eventDtoList = eventDetailsList?.Select(e => new EventDto
                 {
+                    RecordId = e.RecordId,
                     Name = e.Name,
                     Description = e.Description,
                     StartDate = e.StartDate,

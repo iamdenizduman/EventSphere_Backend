@@ -63,9 +63,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.PaymentService.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.PaymentService.Infrastructure", "Services\PaymentService\EventSphere.PaymentService.Infrastructure\EventSphere.PaymentService.Infrastructure.csproj", "{606828E3-6C39-47CE-B4D9-3BBB140040D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.PaymentService.Persistence", "Services\PaymentService\EventSphere.PaymentService.Persistence\EventSphere.PaymentService.Persistence.csproj", "{31801174-E36C-441E-9B6F-32903770BB89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.PaymentService.Persistence", "Services\PaymentService\EventSphere.PaymentService.Persistence\EventSphere.PaymentService.Persistence.csproj", "{31801174-E36C-441E-9B6F-32903770BB89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSphere.PaymentService.API", "Services\PaymentService\EventSphere.PaymentService.API\EventSphere.PaymentService.API.csproj", "{633F8705-1AB3-4695-A6AE-6D5C5F8EAE09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSphere.PaymentService.API", "Services\PaymentService\EventSphere.PaymentService.API\EventSphere.PaymentService.API.csproj", "{633F8705-1AB3-4695-A6AE-6D5C5F8EAE09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -179,6 +179,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BB96D8D5-B421-40EC-A2CA-DAB34089C638} = {9DE1BC45-3792-47AA-A68C-CA69C149A9BA}
+		{BD980CE3-14EF-491E-B128-657D546BB8E7} = {B9ABF627-C9FC-407E-B37A-B1A708983C27}
 		{E9558BC4-AFE6-4EB3-9A2F-70D002C42F6F} = {BD980CE3-14EF-491E-B128-657D546BB8E7}
 		{258FCAF2-7483-4C62-81A9-BA677861BF5F} = {BD980CE3-14EF-491E-B128-657D546BB8E7}
 		{2C182EE0-07D1-4009-B421-B5230B620747} = {BD980CE3-14EF-491E-B128-657D546BB8E7}

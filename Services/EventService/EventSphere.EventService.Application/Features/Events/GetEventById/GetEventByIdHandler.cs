@@ -29,6 +29,7 @@ namespace EventSphere.EventService.Application.Features.Events.GetEventById
 
                 var eventDto = new EventDto
                 {
+                    RecordId = eventDetails.RecordId,
                     Name = eventDetails.Name,
                     Description = eventDetails.Description,
                     StartDate = eventDetails.StartDate,
